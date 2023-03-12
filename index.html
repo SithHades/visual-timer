@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Visual Timer</title>
+    <style>
+      /* Define the styles for the background */
+      #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff; /* start with white */
+        transform: scaleY(0); /* start with 0 height */
+        transform-origin: bottom; /* set the transform origin to bottom */
+        transition: transform 2s linear; /* transition the transform property over 2 seconds */
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="content" id="content">
+      <div class="text">Visual Timer</div>
+
+      <div class="inputs">
+        <div class="input-group">
+          <label for="color1-duration">First Duration</label>
+          <div class="wrap">
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                id="color1-duration"
+                min="1"
+                max="60"
+                value="1"
+                readonly
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="color2-duration">Second Duration</label>
+          <div class="wrap">
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                id="color2-duration"
+                min="1"
+                max="60"
+                value="1"
+                readonly
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="repetitions">Repetitions</label>
+          <div class="wrap">
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                id="repetitions"
+                min="1"
+                max="60"
+                value="1"
+                readonly
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="button" onclick="startAnimation()">Start Timer</button>
+    </div>
+    <div id="background"></div>
+  </body>
+</html>

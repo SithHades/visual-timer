@@ -4,6 +4,7 @@ function startAnimation() {
   const color2Duration =
     document.getElementById("color2-duration").value * 1000; // convert to milliseconds
   const repetitions = document.getElementById("repetitions").value;
+  const pause = document.getElementById("pause-duration").value * 1000;
   const background = document.getElementById("background");
 
   content.classList.add("hide");
@@ -21,12 +22,12 @@ function startAnimation() {
         background.style.transition = `transform ${
           color2Duration / 1000
         }s linear`;
-      }, color1Duration);
+      }, color1Duration + pause);
     }, i * (color1Duration + color2Duration));
   }
 
   // remove the hide class from the content element after the animation finishes
   setTimeout(() => {
     content.classList.remove("hide");
-  }, repetitions * (color1Duration + color2Duration));
+  }, repetitions * (color1Duration + color2Duration + pause));
 }

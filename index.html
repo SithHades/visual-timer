@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>Visual Timer</title>
     <style>
       /* Define the styles for the background */
@@ -31,7 +34,7 @@
 
       <div class="inputs">
         <div class="input-group">
-          <label for="color1-duration">First Duration</label>
+          <label for="color1-duration">Time up</label>
           <div class="wrap">
             <div class="number">
               <button
@@ -60,7 +63,7 @@
           </div>
         </div>
         <div class="input-group">
-          <label for="color2-duration">Second Duration</label>
+          <label for="color2-duration">Time down</label>
           <div class="wrap">
             <div class="number">
               <button
@@ -88,6 +91,7 @@
             </div>
           </div>
         </div>
+
         <div class="input-group">
           <label for="repetitions">Repetitions</label>
           <div class="wrap">
@@ -117,7 +121,38 @@
             </div>
           </div>
         </div>
+        <div class="input-group">
+          <label for="pause-duration">Pause top</label>
+          <div class="wrap">
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                id="pause-duration"
+                min="0"
+                max="60"
+                value="0"
+                step="0.5"
+                readonly
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp();"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+
       <button class="button" onclick="startAnimation()">Start Timer</button>
     </div>
     <div id="background"></div>

@@ -4,30 +4,64 @@ function startAnimation() {
   const color2Duration =
     document.getElementById("color2-duration").value * 1000; // convert to milliseconds
   const repetitions = document.getElementById("repetitions").value;
-  const pause = document.getElementById("pause-duration").value * 1000;
+  const pauseDuration = document.getElementById("pause-duration").value * 1000; // convert to milliseconds
   const background = document.getElementById("background");
+  const content = document.getElementById("content");
 
+  // add the hide class to the content element
   content.classList.add("hide");
 
   for (let i = 0; i < repetitions; i++) {
+    // Duration 1 Timer
     setTimeout(() => {
+      console.log("Start timer 1");
+      startTimer(color1Duration);
       background.style.backgroundColor = "#69A297";
       background.style.transform = "scaleY(1)";
       background.style.transition = `transform ${
         color1Duration / 1000
-      }s linear`;
-      setTimeout(() => {
-        background.style.backgroundColor = "#210203";
+      }s ease-in`;
+    }, i * (color1Duration + color2Duration + pauseDuration));
+
+    // Pause Timer
+    setTimeout(() => {
+      console.log("Start pause timer");
+      startTimer(pauseDuration);
+      background.style.backgroundColor = "#F4D35E";
+    }, i * (color1Duration + color2Duration + pauseDuration) + color1Duration);
+
+    // Duration 2 Timer
+    setTimeout(() => {
+      console.log("Start timer 2");
+      startTimer(color2Duration);
+      background.style.backgroundColor = "#F87575";
         background.style.transform = "scaleY(0)";
         background.style.transition = `transform ${
           color2Duration / 1000
-        }s linear`;
-      }, color1Duration + pause);
-    }, i * (color1Duration + color2Duration));
+        }s ease-in-out`;
+    }, i * (color1Duration + color2Duration + pauseDuration) + color1Duration + pauseDuration);
   }
 
-  // remove the hide class from the content element after the animation finishes
   setTimeout(() => {
     content.classList.remove("hide");
-  }, repetitions * (color1Duration + color2Duration + pause));
+    timer.style.display = "none";
+  }, repetitions * (color1Duration + color2Duration + pauseDuration));
+}
+
+function startTimer(duration) {
+  const timer = document.getElementById("timer");
+  timer.style.display = "block";
+
+  let startTime = Date.now();
+  let elapsedTime = 0;
+
+  let timerInterval = setInterval(() => {
+    elapsedTime = Date.now() - startTime;
+    let remainingTime = duration - elapsedTime;
+    timer.textContent = (remainingTime / 1000).toFixed(1) < 0 ? "0.0" : (remainingTime / 1000).toFixed(1);
+
+    if (remainingTime <= 0) {
+      clearInterval(timerInterval);
+    }
+  }, 5);
 }

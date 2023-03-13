@@ -1,9 +1,8 @@
 :root {
-  --main-color: #e5e5e5;
-  --transparent: #dde1e7;
+  --background: #dde1e7;
   --black-shadow: #595959;
   --white-shadow: #f5f5f5;
-  --red: #ff000090;
+  --text-color: #555;
 }
 
 * {
@@ -23,12 +22,23 @@ body {
   display: grid;
   place-items: center;
   text-align: center;
-  background: #dde1e7;
+  background: var(--background);
+}
+
+#timer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+  font-weight: 700;
+  color: var(--text-color);
+  z-index: 9999;
 }
 
 .content {
   width: 100%;
-  background: #dde1e7;
+  background: var(--background);
   border-radius: 10px;
   padding: 40px 30px;
   box-shadow: none;
@@ -42,14 +52,14 @@ body {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 35px;
-  color: #555;
+  color: var(--text-color);
 }
 
 .content label {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 10px;
-  color: #555;
+  color: var(--text-color);
 }
 
 .content .wrap {
@@ -71,7 +81,7 @@ body {
   position: relative;
   width: 100px;
   border-radius: 25px;
-  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+  
 }
 
 .number input[type="number"] {
@@ -81,7 +91,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  background: var(--transparent);
+  background: var(--background);
   box-sizing: border-box;
   text-align: center;
   -moz-appearance: textfield;
@@ -108,8 +118,8 @@ body {
   text-align: center;
   border: none;
   font-size: 16px;
-  color: var(--black-shadow);
-  background: #00000000;
+  color: var(--text-color);
+  background: transparent;
   border-radius: 25px;
 }
 .number-plus {
@@ -123,8 +133,8 @@ body {
   text-align: center;
   border: none;
   font-weight: 600;
-  color: var(--black-shadow);
-  background: #00000000;
+  color: var(--text-color);
+  background: transparent;
   border-radius: 25px;
 }
 
@@ -152,7 +162,7 @@ body {
   color: #fff;
   text-align: center;
   background: #72a98f;
-  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+  box-shadow: 7px 7px 15px #b1b1b1, -7px -7px px #ffffff;
   transition: 0.5s;
 }
 .button:hover {

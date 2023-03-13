@@ -11,7 +11,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   -webkit-appearance: none;
-  -webkit-transform:translate3d(0,0,0);
 }
 
 html,
@@ -35,6 +34,7 @@ body {
   font-weight: 700;
   color: var(--text-color);
   z-index: 9999;
+  -webkit-transform:translate3d(-50%,-50%,0);
 }
 
 .content {
@@ -118,7 +118,7 @@ body {
   display: block;
   text-align: center;
   border: none;
-  font-size: 16px;
+  font-weight: 600;
   color: var(--text-color);
   background: transparent;
   border-radius: 25px;

@@ -11,6 +11,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   -webkit-appearance: none;
+  -webkit-transform:translate3d(0,0,0);
 }
 
 html,

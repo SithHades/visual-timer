@@ -7,11 +7,18 @@ function startAnimation() {
   const pauseDuration = document.getElementById("pause-duration").value * 1000; // convert to milliseconds
   const background = document.getElementById("background");
   const content = document.getElementById("content");
+  const counter = document.getElementById("counter");
 
   // add the hide class to the content element
   content.classList.add("hide");
-
+  counter.style.display = "block";
   for (let i = 0; i < repetitions; i++) {
+    
+    // Counter
+    setTimeout(() => {
+      counter.textContent = repetitions - i;
+    }, i * (color1Duration + color2Duration + pauseDuration));
+
     // Duration 1 Timer
     setTimeout(() => {
       console.log("Start timer 1");
@@ -45,6 +52,7 @@ function startAnimation() {
   setTimeout(() => {
     content.classList.remove("hide");
     timer.style.display = "none";
+    counter.style.display = "none";
   }, repetitions * (color1Duration + color2Duration + pauseDuration));
 }
 

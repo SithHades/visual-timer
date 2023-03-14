@@ -25,6 +25,18 @@ body {
   background: var(--background);
 }
 
+#counter {
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  font-size: 4em;
+  font-weight: 700;
+  color: var(--text-color);
+  z-index: 9999;
+}
+
 #timer {
   position: fixed;
   top: 50%;

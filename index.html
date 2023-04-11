@@ -122,7 +122,7 @@
           </div>
         </div>
         <div class="input-group">
-          <label for="pause-duration">Pause top</label>
+          <label for="pause-duration-intra">Pause intra</label>
           <div class="wrap">
             <div class="number">
               <button
@@ -134,11 +134,71 @@
               </button>
               <input
                 type="number"
-                id="pause-duration"
+                id="pause-duration-intra"
                 min="0"
                 max="60"
                 value="0"
                 step="0.5"
+                readonly
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp();"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="pause-duration-after">Pause after</label>
+          <div class="wrap">
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                id="pause-duration-after"
+                min="0"
+                max="60"
+                value="0"
+                step="0.5"
+                readonly
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp();"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="start-delay">Start delay</label>
+          <div class="wrap">
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                id="start-delay"
+                min="0"
+                max="60"
+                value="0"
+                step="1"
                 readonly
               />
               <button

@@ -13,6 +13,10 @@ function startAnimation() {
   const content = document.getElementById("content");
   const counter = document.getElementById("counter");
 
+  const switchElem = document.getElementById("toggle-switch");
+
+  background.style.transformOrigin = switchElem.checked ? "top" : "bottom";
+
   // add the hide class to the content element
   content.classList.add("hide");
   counter.style.display = "block";

@@ -151,14 +151,42 @@ body {
   border-radius: 25px;
 }
 
-.inputs {
-  display: flex;
-  flex-wrap: wrap;
+/* For screens larger than 768px (desktop) */
+@media (min-width: 768px) {
+  .inputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .inputs-group-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .input-group {
+    width: calc(33.33% - 10px);
+    margin-right: 10px;
+  }
+  .input-group:last-child {
+    margin-right: 0;
+  }
 }
 
-.input-group {
-  width: 100%;
-  margin-bottom: 10px;
+/* For screens smaller than 768px (mobile) */
+@media (max-width: 767px) {
+  .inputs {
+    display: block;
+  }
+  .inputs-group-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .input-group {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 /* Button */
@@ -186,14 +214,7 @@ body {
 }
 
 @media (min-width: 480px) {
-    .inputs {
-      flex-wrap: nowrap;
-    }
-  
-    .input-group {
-      width: calc(100% / 4);
-      margin-bottom: 25;
-    }
+
   
     .content {
       width: 480px;

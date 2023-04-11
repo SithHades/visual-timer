@@ -33,184 +33,191 @@
       <div class="text">Visual Timer</div>
 
       <div class="inputs">
-        <div class="input-group">
-          <label for="color1-duration">Time up</label>
-          <div class="wrap">
-            <div class="number">
-              <button
-                class="number-minus"
-                type="button"
-                onclick="this.nextElementSibling.stepDown();"
-              >
-                -
-              </button>
-              <input
-                type="number"
-                id="color1-duration"
-                min="1"
-                max="60"
-                value="1"
-                readonly
-              />
-              <button
-                class="number-plus"
-                type="button"
-                onclick="this.previousElementSibling.stepUp();"
-              >
-                +
-              </button>
+
+        <div class="inputs-group-group">
+          <div class="input-group">
+            <label for="color1-duration">Time up</label>
+            <div class="wrap">
+              <div class="number">
+                <button
+                  class="number-minus"
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown();"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="color1-duration"
+                  min="1"
+                  max="60"
+                  value="1"
+                  readonly
+                />
+                <button
+                  class="number-plus"
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp();"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="input-group">
-          <label for="color2-duration">Time down</label>
-          <div class="wrap">
-            <div class="number">
-              <button
-                class="number-minus"
-                type="button"
-                onclick="this.nextElementSibling.stepDown();"
-              >
-                -
-              </button>
-              <input
-                type="number"
-                id="color2-duration"
-                min="1"
-                max="60"
-                value="1"
-                readonly
-              />
-              <button
-                class="number-plus"
-                type="button"
-                onclick="this.previousElementSibling.stepUp();"
-              >
-                +
-              </button>
+          <div class="input-group">
+            <label for="color2-duration">Time down</label>
+            <div class="wrap">
+              <div class="number">
+                <button
+                  class="number-minus"
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown();"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="color2-duration"
+                  min="1"
+                  max="60"
+                  value="1"
+                  readonly
+                />
+                <button
+                  class="number-plus"
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp();"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="repetitions">Repetitions</label>
+            <div class="wrap">
+              <div class="number">
+                <button
+                  class="number-minus"
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown();"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="repetitions"
+                  min="1"
+                  max="60"
+                  value="1"
+                  readonly
+                />
+                <button
+                  class="number-plus"
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp();"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="input-group">
-          <label for="repetitions">Repetitions</label>
-          <div class="wrap">
-            <div class="number">
-              <button
-                class="number-minus"
-                type="button"
-                onclick="this.nextElementSibling.stepDown();"
-              >
-                -
-              </button>
-              <input
-                type="number"
-                id="repetitions"
-                min="1"
-                max="60"
-                value="1"
-                readonly
-              />
-              <button
-                class="number-plus"
-                type="button"
-                onclick="this.previousElementSibling.stepUp();"
-              >
-                +
-              </button>
+
+        <div class="inputs-group-group">
+          <div class="input-group">
+            <label for="pause-duration-intra">Pause intra</label>
+            <div class="wrap">
+              <div class="number">
+                <button
+                  class="number-minus"
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown();"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="pause-duration-intra"
+                  min="0"
+                  max="60"
+                  value="0"
+                  step="0.5"
+                  readonly
+                />
+                <button
+                  class="number-plus"
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp();"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="pause-duration-after">Pause after</label>
+            <div class="wrap">
+              <div class="number">
+                <button
+                  class="number-minus"
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown();"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="pause-duration-after"
+                  min="0"
+                  max="60"
+                  value="0"
+                  step="0.5"
+                  readonly
+                />
+                <button
+                  class="number-plus"
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp();"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="start-delay">Start delay</label>
+            <div class="wrap">
+              <div class="number">
+                <button
+                  class="number-minus"
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown();"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="start-delay"
+                  min="0"
+                  max="60"
+                  value="0"
+                  step="1"
+                  readonly
+                />
+                <button
+                  class="number-plus"
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp();"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="input-group">
-          <label for="pause-duration-intra">Pause intra</label>
-          <div class="wrap">
-            <div class="number">
-              <button
-                class="number-minus"
-                type="button"
-                onclick="this.nextElementSibling.stepDown();"
-              >
-                -
-              </button>
-              <input
-                type="number"
-                id="pause-duration-intra"
-                min="0"
-                max="60"
-                value="0"
-                step="0.5"
-                readonly
-              />
-              <button
-                class="number-plus"
-                type="button"
-                onclick="this.previousElementSibling.stepUp();"
-              >
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="input-group">
-          <label for="pause-duration-after">Pause after</label>
-          <div class="wrap">
-            <div class="number">
-              <button
-                class="number-minus"
-                type="button"
-                onclick="this.nextElementSibling.stepDown();"
-              >
-                -
-              </button>
-              <input
-                type="number"
-                id="pause-duration-after"
-                min="0"
-                max="60"
-                value="0"
-                step="0.5"
-                readonly
-              />
-              <button
-                class="number-plus"
-                type="button"
-                onclick="this.previousElementSibling.stepUp();"
-              >
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="input-group">
-          <label for="start-delay">Start delay</label>
-          <div class="wrap">
-            <div class="number">
-              <button
-                class="number-minus"
-                type="button"
-                onclick="this.nextElementSibling.stepDown();"
-              >
-                -
-              </button>
-              <input
-                type="number"
-                id="start-delay"
-                min="0"
-                max="60"
-                value="0"
-                step="1"
-                readonly
-              />
-              <button
-                class="number-plus"
-                type="button"
-                onclick="this.previousElementSibling.stepUp();"
-              >
-                +
-              </button>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       <button class="button" onclick="startAnimation()">Start Timer</button>
